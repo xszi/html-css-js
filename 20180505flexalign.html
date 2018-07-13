@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>弹性盒子均匀分布</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 90%;
+            max-width: 960px;
+            margin: 20px auto;
+        }
+
+        .column {
+            font-size: 18px;
+            line-height: 1.5;
+            width: 15%;
+        }
+
+        div {
+            height: 600px;
+            border: 1px solid black;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        /*没等分排序*/
+        /*button:first-child {*/
+            /*align-self: flex-end;*/
+        /*}*/
+        .column:first-child {
+            order: 1;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div class="column">Smile</div>
+    <div class="column">Laugh</div>
+    <div class="column">Wink</div>
+    <div class="column">Shrug</div>
+    <div class="column">Blush</div>
+</div>
+</body>
+</html>
