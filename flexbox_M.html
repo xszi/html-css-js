@@ -1,0 +1,41 @@
+<!-- flexbox_M -->
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+	<title>用弹性盒子flexbox实现三栏中间自适应布局</title>
+	<style>
+		#content{
+			display: flex;
+		}
+
+		#left{
+			width: 200px;
+			height: 200px;
+			background: #eee
+		}
+
+
+		#right{
+			width: 200px;
+			height: 200px;
+			background: #fee
+		}
+
+		#center{
+			background: #ccc;
+			flex: 1;
+			/*注意要把flex放在最后，不能无效*/
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="content">
+		<div id="left">left</div>
+		<div id="center">center</div>
+		<div id="right">right</div>
+	</div>
+</body>
+</html>

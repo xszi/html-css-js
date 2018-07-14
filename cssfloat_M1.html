@@ -1,0 +1,46 @@
+<!-- cssfloat_M1 -->
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>float实现三栏布局---左右固定宽度，中间自适应</title>
+	<style>
+
+		*{
+			margin: 0;
+			padding: 0;
+		}
+
+		body{
+			min-width: 600px;
+		}
+		
+		#left{
+			float: left;
+			width: 200px;
+			height: 200px;
+			background: #aaf;
+		}
+
+		#right{
+			float: right;
+			width: 200px;
+			height: 200px;
+			background: #fee;
+		}
+
+		#center{
+			width: 100%;
+			height: 200px;
+			background: #ccc
+		}
+	</style>
+</head>
+<body>
+<div>
+	<div id="left">left</div>
+	<div id="right">right</div>
+	<div id="center">center</div>
+</div>
+</body>
+</html>
