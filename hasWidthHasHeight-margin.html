@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>定宽定高如何设置水平垂直居中-margin方法</title>
+	<style>
+		#d1{
+			width: 200px;
+			height: 200px;
+			position: relative;
+			border: 1px solid #ccc;
+		}
+		#d2{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #fcc;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -50px;
+			margin-left: -50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="d1">
+		<div id="d2"></div>
+	</div>
+</body>
+</html>
