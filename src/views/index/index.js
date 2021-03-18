@@ -1,2 +1,2 @@
 import './index.css';
-require('./index.pug');
+require('./index.html');

@@ -27,19 +27,15 @@ function generateConf({ componentName }) {
   const camelName = camelCase(componentName);
 
   const files = [
+    // {
+    //   /* pug 文件 */
+    //   filename: resolve(`./src/views/${camelName}/${camelName}.pug`),
+    //   content: ``
+    // },
     {
-      /* pug 文件 */
-      filename: resolve(`./src/views/${camelName}/${camelName}.pug`),
-      content: `\
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
-    title Document
-  body 
-`
+        /* html 文件 */
+        filename: resolve(`./src/views/${camelName}/${camelName}.html`),
+        content: ``
     },
     {
       /* css 文件 */

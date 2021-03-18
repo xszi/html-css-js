@@ -35,12 +35,13 @@ module.exports = merge(base, {
   },
 
   module: {
-    rules: [
-      {
-        test: /\.html$/,
-        loader: 'raw-loader'
-      }
-    ].concat(rules())
+    rules: rules()
+    // [
+    //   {
+    //     test: /\.html$/,
+    //     loader: 'raw-loader'
+    //   }
+    // ].concat(rules())
   },
 
   plugins: [new webpack.HotModuleReplacementPlugin()]

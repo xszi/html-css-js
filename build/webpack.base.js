@@ -6,7 +6,7 @@ module.exports = {
   entry: util.plugins.Entries,
   output: {
     path: path.join(__dirname, '../dist'),
-    filename: './js/[name].bundle.js'
+    filename: './js/[name]_[hash].js'
   },
   module: {
     rules: util.rules

@@ -104,8 +104,8 @@ const createFiles = function() {
     result.push({
       name: usePug ? file.match(/\w{0,}(?=\.pug)/)[0] : file.match(/\w{0,}(?=\.html)/)[0],
       templatePath: file,
-      jsPath: file.replace(type, scriptType),
-      stylePath: file.replace(type, 'css')
+      jsPath: file.replace(`\.${type}`, `.${scriptType}`),
+      stylePath: file.replace(`\.${type}`, '.css')
     });
   }
   return result;

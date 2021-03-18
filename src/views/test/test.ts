@@ -1,2 +1,2 @@
-import './test.pug';
+import './test.html';
 import './test.css';
