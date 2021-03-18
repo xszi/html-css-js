@@ -102,12 +102,13 @@ const createFiles = function() {
   const files = glob.sync(path.join(__dirname, `../src/views/**/*.${type}`));
   for (file of files) {
     result.push({
-      name: usePug ? file.match(/\w{0,}(?=\.pug)/)[0] : file.match(/\w{0,}(?=\.html)/)[0],
+      name: usePug ? file.match(/\w{0,}(?=\.pug)/)[0] : file.match(/\/\w{0,}\/\w{0,}(?=\.html)/)[0].split('/')[1],
       templatePath: file,
       jsPath: file.replace(`\.${type}`, `.${scriptType}`),
       stylePath: file.replace(`\.${type}`, '.css')
     });
   }
+  console.log(result, '1111111');
   return result;
 };
 

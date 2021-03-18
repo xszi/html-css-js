@@ -34,18 +34,18 @@ function generateConf({ componentName }) {
     // },
     {
         /* html 文件 */
-        filename: resolve(`./src/views/${camelName}/${camelName}.html`),
+        filename: resolve(`./src/views/${camelName}/index.html`),
         content: ``
     },
     {
       /* css 文件 */
-      filename: resolve(`./src/views/${camelName}/${camelName}.css`),
+      filename: resolve(`./src/views/${camelName}/index.css`),
       content: `
       `
     },
     {
       /* js 文件 */
-      filename: resolve(`./src/views/${camelName}/${camelName}.js`),
+      filename: resolve(`./src/views/${camelName}/index.js`),
       content: `
       `
     }
