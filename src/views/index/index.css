@@ -1,7 +1,0 @@
-:root {
-    --red-color: red;
-}
-
-.header {
-    color: var(--red-color);
-}

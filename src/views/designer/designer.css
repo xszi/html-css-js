@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+}
+
+.container div {
+    border: 1px solid #000;
+    height: 100vh;
+    width: 50%
+}
+
+.panel label {
+    margin-right: 10px;
+}
+
+.display {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    font-size: var(--font-size, 12px);
+    border-style: var(--border-style, solid);
+    border-color: var(--border-color, red);
+    border-width: var(--border-width, 5px);
+    outline: 0;
+
+    transition: margin-left var(--duration, 1s) var(--timing-function, linear);
+}
+
+.btn:focus {
+    margin-left: 200px;
+}
