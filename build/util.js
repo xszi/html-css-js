@@ -108,7 +108,6 @@ const createFiles = function() {
       stylePath: file.replace(`\.${type}`, '.css')
     });
   }
-  console.log(result, '1111111');
   return result;
 };
 
