@@ -35,19 +35,30 @@ function generateConf({ componentName }) {
     {
         /* html 文件 */
         filename: resolve(`./src/views/${camelName}/index.html`),
-        content: ``
+        content: `<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http="X-UA-Compatible" content="IE=edge">
+        <title>Content</title>
+    </head>
+    <body>
+    </body>
+</html>`
     },
     {
       /* css 文件 */
       filename: resolve(`./src/views/${camelName}/index.css`),
-      content: `
-      `
+      content: `body { 
+    color: red; 
+}`
     },
     {
       /* js 文件 */
       filename: resolve(`./src/views/${camelName}/index.js`),
-      content: `
-      `
+      content: `import './index.css';
+require('./index.html'); `
     }
   ];
 
