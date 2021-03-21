@@ -28,13 +28,13 @@ const rules = function() {
     },
     {
       test: /\.(png|jpg)$/,
-      loader: 'file-loader',
+      loader: 'url-loader',
       options: {
         limit: 10000,
         name: '[name].[hash:8].[ext]',
         outputPath: 'image/',
-        // __dirname当前模块的目录名。
-        publicPath: isDev() ?  '' : path.posix.join(__dirname, '../../image'),
+        // __dirname当前模块的目录名。E:\projects\html-css\build
+        publicPath: isDev() ?  '' : path.posix.join(__dirname, '../../../dist/image'),
       }
     },
     {
