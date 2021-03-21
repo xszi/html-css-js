@@ -31,12 +31,10 @@ const rules = function() {
       loader: 'file-loader',
       options: {
         limit: 10000,
-        useRelativePath: true,
         name: '[name].[hash:8].[ext]',
-        // 图片存放的地址---dist 根目录下
-        outputPath: '',
-        // 分开发环境和生产环境分别打包出来不同的地址（写在css中的路径使用相对路径）
-        publicPath: isDev() ?  '' : '../images',
+        outputPath: 'image/',
+        // __dirname当前模块的目录名。
+        publicPath: isDev() ?  '' : path.posix.join(__dirname, '../../image'),
       }
     },
     {
@@ -154,16 +152,16 @@ const plugins = function() {
           return getPath('css/[name].css');
         }
       }),
-    //   new CopyWebpackPlugin([
-    //     {
-    //       // 源文件目录
-    //       from: path.join(__dirname, '../src/views/images'),
-    //       // 目标目录 dist目录下
-    //       to: 'images',
-    //       // 筛选过滤，这里复制所有文件，连同文件夹
-    //       ignore: ['.*']
-    //     }
-    //   ]),
+      new CopyWebpackPlugin([
+        {
+          // 源文件目录
+          from: path.join(__dirname, '../static'),
+          // 目标目录 dist目录下
+          to: 'static',
+          // 筛选过滤，这里复制所有文件，连同文件夹
+          ignore: ['.*']
+        }
+      ]),
       new ProgressBarPlugin()
     ],
     Entries
