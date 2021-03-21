@@ -34,6 +34,7 @@ const rules = function() {
         name: '[name].[hash:8].[ext]',
         outputPath: 'image/',
         // __dirname当前模块的目录名。E:\projects\html-css\build
+        // 由于使用Github actions部署时路径引用存在问题，所以直接使用线上绝对路径
         publicPath: isDev() ?  '' : 'https://xszi.github.io/html-css-js/image'
       }
     },
@@ -152,16 +153,16 @@ const plugins = function() {
           return getPath('css/[name].css');
         }
       }),
-      new CopyWebpackPlugin([
-        {
-          // 源文件目录
-          from: path.join(__dirname, '../static'),
-          // 目标目录 dist目录下
-          to: 'static',
-          // 筛选过滤，这里复制所有文件，连同文件夹
-          ignore: ['.*']
-        }
-      ]),
+    //   new CopyWebpackPlugin([
+    //     {
+    //       // 源文件目录
+    //       from: path.join(__dirname, '../static'),
+    //       // 目标目录 dist目录下
+    //       to: 'static',
+    //       // 筛选过滤，这里复制所有文件，连同文件夹
+    //       ignore: ['.*']
+    //     }
+    //   ]),
       new ProgressBarPlugin()
     ],
     Entries
