@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http="X-UA-Compatible" content="IE=edge">
+        <title>walk-man</title>
+        <style>
+            body {
+                width: 100%;
+                height: 100%;
+                background-color: rgba(139, 210, 254); 
+            }
+
+            .walk {
+                animation-name: walking;
+                animation-duration: 0.3s;
+                animation-timing-function: steps(20, end);
+                animation-iteration-count: infinite;
+                animation-play-state: var(--moving, paused);
+                background-repeat: no-repeat;
+                background-image: url(../../../images/walk-man.png);
+                background-size: cover;
+                width: 80px;
+                height: 60px;
+                transform: translate(var(--translate-x, 0px), var(--translate-y, 0px)) rotateY(var(--rotateY, 0deg));
+            }
+
+            @keyframes walking {
+                from {
+                    background-position: 0px;
+                }
+
+                to {
+                    background-position: -1600px;
+                }
+            }
+        </style
+    </head>
+    <body>
+        <div class="walk"></div>
+        <script>
+            const keyboards = {
+                UP: 38,
+                DOWN: 40,
+                LEFT: 37,
+                RIGHT: 39
+            };
+            const keyRelatedVar = {
+                [keyboards.UP]: '--translate-y',
+                [keyboards.DOWN]: '--translate-y',
+                [keyboards.LEFT]: '--translate-x',
+                [keyboards.RIGHT]: '--translate-x'
+            }
+            const keyRelatedMultiplier = {
+                [keyboards.UP]: -0.8,
+                [keyboards.DOWN]: 0.8,
+                [keyboards.LEFT]: -1,
+                [keyboards.RIGHT]: 1
+            }
+
+            const directions = {
+                LEFT: 1,
+                RIGHT: 2
+            }
+
+            const root = document.querySelector(':root')
+            let move = false
+            let direction = ''
+            let timer = null
+
+            document.addEventListener('keydown', (ev) => {
+                move = true;
+                if (!Object.values(keyboards).includes(ev.keyCode)) {
+                    return;
+                }
+
+                root.style.setProperty('--moving', 'runing');
+                if (ev.keyCode === keyboards.RIGHT) {
+                    direction = directions.RIGHT;
+                    root.style.setProperty('--rotateY', '0deg');
+                } else if (ev.keyCode === keyboards.LEFT) {
+                    direction = directions.LEFT;
+                    root.style.setProperty('--rotateY', '180deg');
+                }
+
+                if (!timer) {
+                    const varName = keyRelatedVar[ev.keyCode];
+                    const multiplier = keyRelatedMultiplier[ev.keyCode];
+                    const multiplierBase = 12;
+                    timer = setInterval(() => {
+                        let value = parseInt(root.style.getPropertyValue(varName), 10) || 0;
+                        let nextValue = value + multiplier * multiplierBase;
+                        root.style.setProperty(varName, `${nextValue}px`)
+                    }, 100);
+                }
+            });
+
+            document.addEventListener('keyup', (ev) => {
+                move = false
+                root.style.setProperty('--moving', 'paused');
+                direction = '';
+                timer = clearInterval(timer);
+            });
+        </script>
+    </body>
+</html>
