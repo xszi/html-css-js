@@ -11,7 +11,7 @@ body {
     animation-iteration-count: infinite;
     animation-play-state: var(--moving, paused);
     background-repeat: no-repeat;
-    background-image: url(/home/runner/work/html-css-js/html-css-js/image/walk-man.c9a3e7c6.png);
+    background-image: url(https://xszi.github.io/html-css-js/image/walk-man.c9a3e7c6.png);
     background-size: cover;
     width: 80px;
     height: 60px;
