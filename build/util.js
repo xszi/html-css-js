@@ -34,7 +34,7 @@ const rules = function() {
         name: '[name].[hash:8].[ext]',
         outputPath: 'image/',
         // __dirname当前模块的目录名。E:\projects\html-css\build
-        publicPath: isDev() ?  '' : path.posix.join(__dirname, '../../../dist/image'),
+        publicPath: isDev() ?  '' : path.join(__dirname, '../image'),
       }
     },
     {
