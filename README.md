@@ -2,7 +2,7 @@
 
 使用`html`，`css`，`js(ts)`书写简单`demo`。`webpack`构建多页面应用，可配置，命令行快速创建模板文件，`Github Action`持续集成部署预览：🍵 [预览地址](https://xszi.github.io/html-css-js/index.html)
 
-本项目构建参考了一位`Github`大神开源的代码（链接找不回来了，特此感谢！），然后自己修改了部分`webpack`配置，使之符合本项目需求。
+本项目构建参考了一位`Github`大神开源的代码（链接找不回来了，特此感谢！），然后自己修改了部分`webpack`配置，使之符合本项目需求。demo部分自己写的，其他筛选自[css-js-animation](https://github.com/HerbertKarajan/css-js-animation)
 
 * 多页面应用
 * 快速创建新页面模板
